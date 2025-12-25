@@ -1,0 +1,67 @@
+{
+  "name": "resilia",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "A lightweight, decorator-based resilience stack for TypeScript: Circuit Breaker, Bulkhead, and Retry.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "tsc": "tsc",
+    "dev": "node --watch src/index.ts",
+    "prebuild": "npm run tsc && npm run clean",
+    "build": "tsup",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest dev",
+    "prelint": "biome format --write ./src/*.ts ./tests/*.ts",
+    "lint": "biome lint ./src/*.ts ./tests/*.ts",
+    "check": "biome check --write ./src/*.ts ./tests/*.ts",
+    "prepare": "husky",
+    "commit": "cz",
+    "clean": "del-cli dist/ coverage/ *.log",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "resilience",
+    "circuit-breaker",
+    "bulkhead",
+    "retry",
+    "typescript",
+    "decorator",
+    "stability"
+  ],
+  "author": {
+    "email": "backendwithali@gmail.com",
+    "name": "Ali nazari"
+  },
+  "repository": {
+    "url": "https://github.com/Silent-Watcher/resilia"
+  },
+  "engines": {
+    "node": ">=v22.18.0"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.10",
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^7.0.0",
+    "husky": "^9.1.7",
+    "tsup": "^8.5.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
