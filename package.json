@@ -1,7 +1,7 @@
 {
   "name": "resilia",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A lightweight, decorator-based resilience stack for TypeScript: Circuit Breaker, Bulkhead, and Retry.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
