@@ -8,7 +8,7 @@ export const resilienceRegistry = new Map<string, {
 }>
 
 
-export function Resilient(config: {
+export interface ResilientConfig {
 	concurrencyLimit: number,
 	queueLimit: number,
 	errorThreshold: number,
@@ -16,7 +16,10 @@ export function Resilient(config: {
 	maxRetries: number,
 	baseDelayMs: number;
 	capDelayMs: number;
-}) {
+}
+
+
+export function Resilient(config: ResilientConfig) {
 	return function (target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 		const originalMethod = descriptor.value
 
