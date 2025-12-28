@@ -133,6 +133,7 @@ const stats = bulkhead.getMetrics();
 ## Contributing
 
 Contributions are welcome! If you have ideas for new resilience patterns (like Rate Limiting or Timeouts), feel free to open an issue or a PR.
+
 ---
 
 ## License

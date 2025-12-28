@@ -6,12 +6,12 @@ export async function withRetry<T>(operation: () => Promise<T>, opts: {
 
     const { baseDelayMs, capDelayMs, maxRetries } = opts
 
-    for (let attempt = 0; attempt < maxRetries; attempt++) {
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
         try {
             return await operation()
         } catch (error) {
 
-            if (attempt === maxRetries - 1) {
+            if (attempt > maxRetries) {
                 throw error;
             }
 

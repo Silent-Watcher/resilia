@@ -15,6 +15,9 @@
         "noUncheckedIndexedAccess": true,
         "noImplicitOverride": true,
 
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+
         "module": "preserve",
         "noEmit": true,
 

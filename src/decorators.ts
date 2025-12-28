@@ -2,7 +2,7 @@ import { BulkHead } from "./libs/BulkHead";
 import { CircuitBreaker } from "./libs/CircuitBreaker";
 import { withRetry } from "./utils/retry";
 
-const resilienceRegistry = new Map<string, {
+export const resilienceRegistry = new Map<string, {
 	breaker: CircuitBreaker,
 	bulkhead: BulkHead
 }>
